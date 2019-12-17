@@ -1,0 +1,23 @@
+{{movieForm.dirty}}
+{{movieForm.value|json}}
+{{movieForm.pristine}}
+{{movieForm.valid}}
+{{movieForm.invalid}}
+{{movieForm.errors|json}}
+
+<form [formGroup]="movieForm" (submit)="addMovie()">
+    <div class="form-group"><input type="text" name="movieName" formControlName="movieName" class="form-control"></div>
+    <div>{{movieForm.get('movieName').errors|json}}</div>
+    <div class="form-group"><input type="text" name="movieReleaseDate" formControlName="movieReleaseDate" class="form-control"> </div>
+    <div class="form-group">
+        <input type="text" name="movieLanguage" formControlName="movieLanguage" class="form-control">
+        <div>{{movieForm.getError('required','movieLanguage')}}</div>
+        <div>{{movieForm.get('movieLanguage').errors|json}}</div>
+    </div>
+    <div class="form-group"><input type="text" name="movieRating" formControlName="movieRating" class="form-control"></div>
+    
+    <div class="form-group"><input type="text" name="password" formControlName="password" class="form-control"></div>
+    <div class="form-group"><input type="text" name="confirmPassword" formControlName="confirmPassword" class="form-control"></div>
+   
+    <div><button type="submit" class="btn btn-primary" [disabled]="movieForm.invalid">Add Movie</button></div>
+</form>

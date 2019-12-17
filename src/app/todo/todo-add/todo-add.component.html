@@ -1,0 +1,13 @@
+<form [formGroup]="todoForm" (submit)="addToDo()">
+    <div class="form-group"><input type="text" name="Userid" formControlName="userid" class="form-control"></div>
+    
+    <div class="form-group"><input type="text" name="Id" formControlName="id" class="form-control"> </div>
+    
+    <div class="form-group"><input type="text" name="Title" formControlName="title" class="form-control"></div>
+    
+    <div class="form-group"><input type="checkbox" name="Completed" formControlName="completed" class="form-control"></div>
+     
+    <div><button type="submit" class="btn btn-primary" [disabled]="todoForm.invalid">Add Todo</button></div>
+
+
+</form>

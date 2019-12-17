@@ -1,0 +1,7 @@
+<!-- <app-header></app-header> -->
+<!-- {{movieList|json}} -->
+<!-- <app-movie-add></app-movie-add> -->
+<app-movie-add-form></app-movie-add-form>
+<!-- <button (click)="addMovie()">Add Movie</button> -->
+<app-movie-array></app-movie-array>
+<app-movie-list [movies]="movieList" (currentMovie)="getFromChild($event)"></app-movie-list>

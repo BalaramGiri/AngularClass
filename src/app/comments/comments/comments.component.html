@@ -1,0 +1,4 @@
+<!-- <app-comments-list [comments]="commentsList"></app-comments-list> -->
+
+<app-comments-list [comments]="commentsList$ | async"></app-comments-list>
+<div *ngIf="errorMessage">{{errorMessage | json}}</div>

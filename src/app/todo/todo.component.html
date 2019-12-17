@@ -1,0 +1,2 @@
+<app-todo-list [todos]="todosList$ | async"></app-todo-list>
+<div *ngIf="errorMessage">{{errorMessage | json}}</div>
