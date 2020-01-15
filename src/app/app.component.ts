@@ -20,17 +20,17 @@ export class AppComponent {
 
   }
 
-  movieList: IMovie[] = [
-    {
-      name: 'Rombo', language: 'English', rating: 3, releaseDate: new Date('10/22/1995')
-    },
-    {
-      name: 'Sholay', language: 'Hindi', rating: 5, releaseDate: new Date('10/20/1975')
-    },
-    {
-      name: 'AAA', language: 'Telugu', rating: 3, releaseDate: new Date('10/18/1985')
-    }
-  ];
+  // movieList: IMovie[] = [
+  //   {
+  //     name: 'Rombo', language: 'English', rating: 3, releaseDate: new Date('10/22/1995')
+  //   },
+  //   {
+  //     name: 'Sholay', language: 'Hindi', rating: 5, releaseDate: new Date('10/20/1975')
+  //   },
+  //   {
+  //     name: 'AAA', language: 'Telugu', rating: 3, releaseDate: new Date('10/18/1985')
+  //   }
+  // ];
 
   toggle() {
     this.hidden = !this.hidden;

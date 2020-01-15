@@ -3,5 +3,5 @@ export interface IMovie{
     language : string;
     rating : number;
     releaseDate : Date;
-
+    collection: number;
 }

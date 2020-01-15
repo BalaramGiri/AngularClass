@@ -8,6 +8,7 @@
       <th>Language</th>
       <th>Rating</th>
       <th>Release Date</th>
+      <th>Collection</th>
       <th>Action</th>
     </tr>
   </thead>
@@ -16,10 +17,11 @@
      <td>{{i}}</td>
        <td>{{even}}</td>
       <td>{{odd}}</td>
-       <td>{{movie.name}}</td>
+       <td>{{movie.name | name:'R'}}</td>
        <td>{{movie.language}}</td>
        <td>{{movie.rating}}</td>
-       <td>{{movie.releaseDate}}</td>
+       <td>{{movie.collection | currency: 'EUR'}}</td>
+       <td>{{movie.releaseDate | date: 'dd-MMM-yyyy'}}</td>
        <td><button (click)="selectedMovie(movie)" class="btn btn-primary">Get Current Movie</button></td>
     </tr>
   </tbody>

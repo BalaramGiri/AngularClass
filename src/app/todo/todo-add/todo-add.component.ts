@@ -11,6 +11,7 @@ import {TodoService} from '../Service/todo.service';
 export class TodoAddComponent implements OnInit {
 
   todoForm: FormGroup;
+  isSubmitted = false;
 
   constructor(private fb: FormBuilder,private todoService: TodoService) {
 
@@ -28,25 +29,16 @@ export class TodoAddComponent implements OnInit {
    // this.bindData();
   }
 
-  // bindData() {
-  //   //this.movieForm.setValue({
-  //   this.todoForm.patchValue({
-  //     movieName: 'LionKing',
-  //     movieReleaseDate: '11/21/2019',
-  //     // movieLanguage : 'English',
-  //     movieRating: '4'
-  //   })
-  // }
-
-  // addMovie() {
-  //   console.log(this.todoForm.value);
-  //   console.log(this.todoForm.getRawValue());
-  // }
-
   addToDo(){
      
     this.todoService.addToDo(this.todoForm.getRawValue()).subscribe((data) => console.log(data));
-
+    this.isSubmitted = true;
+    this.todoForm.reset({
+      userid: '',
+      id : '',
+      title: '',
+      completed: ''
+    })
   }
 
 }

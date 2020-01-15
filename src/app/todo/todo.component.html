@@ -1,2 +1,4 @@
-<app-todo-list [todos]="todosList$ | async"></app-todo-list>
+<router-outlet></router-outlet>
+<!-- <app-todo-list [todos]="todosList$ | async"></app-todo-list> -->
+<app-todo-list [todos]="todosList"></app-todo-list>
 <div *ngIf="errorMessage">{{errorMessage | json}}</div>

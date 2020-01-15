@@ -27,6 +27,12 @@ import { MatListModule } from '@angular/material/list';
 import { PostsModule } from './posts/posts.module';
 import {CommentsModule} from './comments/comments.module';
 import { TodoModule } from './todo/todo.module';
+import { APP_SERVICE, APP_CONFIG } from './valueprovider/appconfig.service';
+import { TableComponent } from './table/table.component';
+//import { CoreModule } from 'core';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+//import { NamePipe } from './pipes/name.pipe';
 
 @NgModule({
   declarations: [
@@ -37,6 +43,8 @@ import { TodoModule } from './todo/todo.module';
     PageNotFoundComponent,
     LoginComponent,
     MainNavComponent,
+    TableComponent
+    //NamePipe,
     // MovieAddComponent,
     // MovieAddFormComponent,
     // MovieArrayComponent,
@@ -51,6 +59,7 @@ import { TodoModule } from './todo/todo.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    //CoreModule,
    // MovieModule,
     EmployeeModule,
     DepartmentModule,
@@ -59,9 +68,13 @@ import { TodoModule } from './todo/todo.module';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
+  providers: [
+    { provide : APP_SERVICE, useValue : APP_CONFIG }
+  ],
+  //exports:[NamePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -8,6 +8,9 @@ import { MovieAddComponent } from './movie-add/movie-add.component';
 import { MovieAddFormComponent } from './movie-add-form/movie-add-form.component';
 import { MovieArrayComponent } from './movie-array/movie-array.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NamePipe } from '../pipes/name.pipe';
+
+
 
 
 @NgModule({
@@ -16,7 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MovieListComponent,
     MovieAddComponent,
     MovieAddFormComponent,
-    MovieArrayComponent
+    MovieArrayComponent,
+    NamePipe
   ],
   imports: [
     CommonModule,
